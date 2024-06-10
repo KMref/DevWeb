@@ -1,0 +1,62 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #40E0D0; /* Vert turquoise */
+    line-height: 2; /* Interligne de 2 */
+    height: 100%;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh; /* Prolonge la div jusqu'en bas de la page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4em; /* Augmenter la taille du texte "POLYNAMES" */
+    color: white; /* Couleur du texte principal */
+}
+
+.highlight {
+    color: #0072CE; /* Couleur du texte "ONLINE" */
+}
+
+button {
+    background-color: #0072CE; /* Bleu du logo Polytech Dijon */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #005BB5; /* Une teinte plus foncée du bleu pour le hover */
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.instructions h2 {
+    font-size: 2em;
+}
+
+.instructions ol {
+    text-align: left;
+    padding: 0 20%;
+}
