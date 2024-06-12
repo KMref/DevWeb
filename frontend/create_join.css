@@ -1,13 +1,26 @@
-/* styles.css */
+/* create_join.css */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #40E0D0; /* Vert turquoise */
+    font-family: 'Roboto', sans-serif; /* Changer la police pour Roboto */
+    background: url('conan.jpeg') no-repeat center center fixed; /* Ajoute l'image de fond */
+    background-size: cover; /* S'assure que l'image couvre toute la page */
     line-height: 2; /* Interligne de 2 */
     height: 100%;
-    background-image: url('/mnt/data/image.png'); /* Mettre l'image de fond */
-    background-size: cover;
+}
+
+.icon-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-bar .icon {
+    width: 32px; /* Taille de l'icône */
+    height: 32px;
+    cursor: pointer;
 }
 
 .container {
@@ -26,11 +39,15 @@ header {
 }
 
 h1 {
-    font-size: 3em;
+    font-family: 'Bangers', cursive; /* Utilise une police similaire avec effet */
+    font-size: 4em; /* Augmente la taille du texte "POLYNAMES" */
+    color: white; /* Couleur du texte principal */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de texture */
 }
 
 .highlight {
-    color: #0072CE; /* Bleu du logo Polytech Dijon */
+    color: #0072CE; /* Couleur du texte "ONLINE" */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de texture */
 }
 
 button {
@@ -41,6 +58,7 @@ button {
     cursor: pointer;
     color: white;
     margin: 10px 0;
+    border-radius: 5px; /* Ajouter des coins arrondis */
 }
 
 button:hover {

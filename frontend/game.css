@@ -1,0 +1,198 @@
+/* game.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('conan.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+    height: 100%;
+}
+
+.icon-bar-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-bar-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-bar-left .icon,
+.icon-bar-right .icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-section {
+    width: 17.5%; /* Réduction de 30% de la largeur des sections latérales */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.blue-section {
+    background-color: #0072CE;
+    color: rgb(0, 0, 0);
+    font-family: 'Helvetica', cursive; /* Nouvelle police pour distinguer */
+}
+
+.red-section {
+    background-color: #FF0000;
+    color: rgb(0, 0, 0);
+    font-family: 'Helvetica', cursive; /* Nouvelle police pour distinguer */
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    width: 50%;
+}
+
+.grid-item {
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+}
+
+.blue {
+    background-color: #0072CE;
+}
+
+.gray {
+    background-color: #808080;
+}
+
+.black {
+    background-color: #000000;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.highlight {
+    color: #0072CE;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Modals */
+.modal {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif; /* Changer la police pour le contenu du modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-red:hover {
+    background-color: darkred;
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-green:hover {
+    background-color: darkgreen;
+}

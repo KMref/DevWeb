@@ -1,0 +1,209 @@
+/* salon.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Changer la police pour Roboto */
+    background: url('conan.jpeg') no-repeat center center fixed; /* Ajoute l'image de fond */
+    background-size: cover; /* S'assure que l'image couvre toute la page */
+    line-height: 1.6; /* Interligne de 1.6 */
+    height: 100%;
+}
+
+.icon-bar-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-bar-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icon-bar-left .icon,
+.icon-bar-right .icon {
+    width: 32px; /* Taille de l'icône */
+    height: 32px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 50px; /* Taille de l'icône de logo */
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh; /* Prolonge la div jusqu'en bas de la page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-section {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive; /* Nouvelle police pour distinguer */
+}
+
+.blue-section {
+    background-color: #0072CE;
+    color: rgb(0, 0, 0);
+}
+
+.red-section {
+    background-color: #FF0000;
+    color: rgb(0, 0, 0);
+}
+
+h1 {
+    font-family: 'Bangers', cursive; /* Utilise une police similaire avec effet */
+    font-size: 4em; /* Augmente la taille du texte "POLYNAMES" */
+    color: white; /* Couleur du texte principal */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de texture */
+}
+
+.highlight {
+    color: #0072CE; /* Couleur du texte "ONLINE" */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de texture */
+}
+
+.content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
+    color: #0072CE; /* Bleu pour le nom d'utilisateur */
+}
+
+.content p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #FFFF00; /* Jaune clair */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: black; /* Texte en noir */
+    margin: 20px 0;
+    border-radius: 5px; /* Ajouter des coins arrondis */
+}
+
+button:hover {
+    background-color: #FFD700; /* Une teinte plus foncée du jaune pour le hover */
+}
+
+.role-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Modals */
+.modal {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif; /* Changer la police pour le contenu du modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-red:hover {
+    background-color: darkred;
+}
+
+.btn-green {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-green:hover {
+    background-color: darkgreen;
+}

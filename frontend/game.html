@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyNames - Partie</title>
+    <link rel="icon" href="polytech.png">
+    <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="icon-bar-left">
+        <img src="joueurs.png" alt="Players" class="icon" id="show-players">
+    </div>
+    <div class="icon-bar-right">
+        <img src="profile.png" alt="Profile" class="icon" id="show-profile">
+        <img src="rules.png" alt="Rules" class="icon" id="show-rules">
+    </div>
+    <div class="container">
+        <header>
+            
+            <h1>POLYNAMES <span class="highlight">ONLINE</span></h1>
+        </header>
+        <div class="main-content">
+            <section class="side-section blue-section">
+                <h2>Maître des mots</h2>
+                <p id="word-master">Aucun joueur</p>
+            </section>
+            <div class="game-grid" id="game-grid">
+                <!-- Grille des mots générée par JavaScript -->
+            </div>
+            <section class="side-section red-section">
+                <h2>Maître d'intuition</h2>
+                <p id="intuition-master">Aucun joueur</p>
+            </section>
+        </div>
+        <footer>
+            <p>AMINEIL © Juin 2024</p>
+        </footer>
+    </div>
+
+    <div id="players-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Joueurs présents</h2>
+            <ul id="players-list">
+                <!-- Liste des joueurs sera remplie ici -->
+            </ul>
+        </div>
+    </div>
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Profil</h2>
+            <p>Nom d'utilisateur : <span id="current-username"></span></p>
+            <button id="quit-game">Quitter la partie</button>
+        </div>
+    </div>
+
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Règles du jeu</h2>
+            <p>
+                <strong>Polynames</strong> est un jeu pour 2 joueurs. Les joueurs travaillent ensemble pour deviner tous les mots de leur équipe. 
+                Un joueur est le Spymaster et l'autre est l'Opératif. Le Spymaster donne des indices d'un mot à l'Opératif, essayant de lui faire deviner 
+                autant de mots de leur équipe que possible. L'équipe gagne lorsqu'elle devine tous ses mots correctement.
+            </p>
+        </div>
+    </div>
+
+    <div id="quit-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmation</h2>
+            <p>Êtes-vous sûr de vouloir quitter la partie ?</p>
+            <button id="confirm-quit" class="btn-red">Oui</button>
+            <button id="cancel-quit" class="btn-green">Non</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = ["Mot 1", "Mot 2", "Mot 3", "Mot 4", "Mot 5", "Mot 6", "Mot 7", "Mot 8", "Mot 9", "Mot 10",
+                        "Mot 11", "Mot 12", "Mot 13", "Mot 14", "Mot 15", "Mot 16", "Mot 17", "Mot 18", "Mot 19",
+                        "Mot 20", "Mot 21", "Mot 22", "Mot 23", "Mot 24", "Mot 25"];
+            const colors = Array(8).fill('blue').concat(Array(15).fill('gray')).concat(Array(2).fill('black'));
+            
+            // Shuffle the words and colors arrays
+            const shuffleArray = (array) => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            };
+
+            shuffleArray(words);
+            shuffleArray(colors);
+
+            const gameGrid = document.getElementById('game-grid');
+
+            for (let i = 0; i < 25; i++) {
+                const wordElement = document.createElement('div');
+                wordElement.className = `grid-item ${colors[i]}`;
+                wordElement.textContent = words[i];
+                gameGrid.appendChild(wordElement);
+            }
+
+            // Modal logic
+            const playersModal = document.getElementById("players-modal");
+            const profileModal = document.getElementById("profile-modal");
+            const rulesModal = document.getElementById("rules-modal");
+            const quitConfirmationModal = document.getElementById("quit-confirmation-modal");
+            const closeButtons = document.getElementsByClassName("close");
+
+            document.getElementById("show-players").onclick = function() {
+                playersModal.style.display = "block";
+                // Load players list (example data)
+                document.getElementById("players-list").innerHTML = "<li>Joueur 1</li><li>Joueur 2</li>";
+            }
+
+            document.getElementById("show-profile").onclick = function() {
+                profileModal.style.display = "block";
+            }
+
+            document.getElementById("show-rules").onclick = function() {
+                rulesModal.style.display = "block";
+            }
+
+            for (let btn of closeButtons) {
+                btn.onclick = function() {
+                    playersModal.style.display = "none";
+                    profileModal.style.display = "none";
+                    rulesModal.style.display = "none";
+                    quitConfirmationModal.style.display = "none";
+                }
+            }
+
+            document.getElementById("quit-game").onclick = function() {
+                quitConfirmationModal.style.display = "block";
+            }
+
+            document.getElementById("confirm-quit").onclick = function() {
+                // Logic to quit the game, for example redirect to home page
+                window.location.href = 'index.html';
+            }
+
+            document.getElementById("cancel-quit").onclick = function() {
+                quitConfirmationModal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
