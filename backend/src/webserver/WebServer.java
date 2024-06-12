@@ -6,7 +6,6 @@ import java.net.InetSocketAddress;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 
-@SuppressWarnings("unused")
 public class WebServer {
     private int listeningPort;
     private HttpServer server;
@@ -58,8 +57,7 @@ public class WebServer {
         }
     }
 
-    private void processPreflightRequest(WebServerContext context)
-    {
+    private void processPreflightRequest(WebServerContext context) {
         context.getResponse().ok("");
     }
 

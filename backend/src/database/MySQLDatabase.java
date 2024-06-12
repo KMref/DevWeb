@@ -1,4 +1,5 @@
 package database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -38,13 +39,14 @@ public class MySQLDatabase {
         }
     }
 
-    private void connect() throws SQLException {
+    public void connect() throws SQLException {
         MySQLDatabase.initialize();
-        this.connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s?allowMultiQueries=true", this.host, this.port, this.databaseName), user, password);
+        this.connection = DriverManager.getConnection(
+                String.format("jdbc:mysql://%s:%d/%s?allowMultiQueries=true", this.host, this.port, this.databaseName),
+                user, password);
     }
 
-    public PreparedStatement prepareStatement(String sqlQuery) throws SQLException
-    {
+    public PreparedStatement prepareStatement(String sqlQuery) throws SQLException {
         return this.connection.prepareStatement(sqlQuery);
     }
 }
