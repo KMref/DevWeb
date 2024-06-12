@@ -1,4 +1,4 @@
-/* game.css */
+/* intuition_master.css */
 body, html {
     margin: 0;
     padding: 0;
@@ -97,16 +97,8 @@ header {
     color: white;
 }
 
-.blue {
-    background-color: #0072CE;
-}
-
-.gray {
-    background-color: #808080;
-}
-
-.black {
-    background-color: #000000;
+.gray-background {
+    background-color: #808080; /* Gris */
 }
 
 footer {

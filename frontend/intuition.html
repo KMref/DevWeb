@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyNames - Salon</title>
+    <title>PolyNames - Maître d'intuition</title>
     <link rel="icon" href="polytech.png">
-    <link rel="stylesheet" href="salon.css">
+    <link rel="stylesheet" href="intuition.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,15 +24,14 @@
         <div class="main-content">
             <section class="side-section blue-section">
                 <h2>Maître des mots</h2>
-                <a href="maitre_mots.html"><button class="role-button">Rejoindre</button></a>
+                <p id="word-master">Aucun joueur</p>
             </section>
-            <div class="content">
-                <h2>Bienvenue ! <span id="username"></span>!</h2>
-                <p>Vous avez rejoint la partie avec succès.</p>
+            <div class="game-grid" id="game-grid">
+                <!-- Grille des mots générée par JavaScript -->
             </div>
             <section class="side-section red-section">
                 <h2>Maître d'intuition</h2>
-                <a href="intuition.html"><button class="role-button">Rejoindre</button></a>
+                <p id="intuition-master">Aucun joueur</p>
             </section>
         </div>
         <footer>
@@ -83,10 +82,28 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const username = urlParams.get('username');
-            document.getElementById('username').textContent = username;
-            document.getElementById('current-username').textContent = username;
+            const words = ["Mot 1", "Mot 2", "Mot 3", "Mot 4", "Mot 5", "Mot 6", "Mot 7", "Mot 8", "Mot 9", "Mot 10",
+                        "Mot 11", "Mot 12", "Mot 13", "Mot 14", "Mot 15", "Mot 16", "Mot 17", "Mot 18", "Mot 19",
+                        "Mot 20", "Mot 21", "Mot 22", "Mot 23", "Mot 24", "Mot 25"];
+
+            // Shuffle the words array
+            const shuffleArray = (array) => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            };
+
+            shuffleArray(words);
+
+            const gameGrid = document.getElementById('game-grid');
+
+            for (let i = 0; i < 25; i++) {
+                const wordElement = document.createElement('div');
+                wordElement.className = `grid-item gray-background`;
+                wordElement.textContent = words[i];
+                gameGrid.appendChild(wordElement);
+            }
 
             // Modal logic
             const playersModal = document.getElementById("players-modal");
@@ -131,6 +148,11 @@
                 quitConfirmationModal.style.display = "none";
             }
         });
+
+        // Disable back navigation and warn before leaving the page
+        window.onbeforeunload = function() {
+            return "Êtes-vous sûr de vouloir quitter la partie ? Toutes les modifications non enregistrées seront perdues.";
+        };
     </script>
 </body>
 </html>

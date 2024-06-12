@@ -6,7 +6,7 @@
     <title>PolyNames</title>
     <link rel="icon" href="polytech.png">
     <link rel="stylesheet" href="create_join.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Polices similaires -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="icon-bar">
@@ -20,8 +20,6 @@
     <div class="container">
         <header>
             <h1>POLYNAMES <span class="highlight">ONLINE</span></h1>
-            <!-- Lien vers la page du salon -->
-            <a href="salon.html" id="salon-link" style="display: none;">Aller au salon</a>
         </header>
         <section class="form-section">
             <h2>Créer une partie</h2>
@@ -29,14 +27,13 @@
                 <label for="username">Veuillez choisir votre pseudo</label>
                 <input type="text" id="username" placeholder="Pseudo">
             </div>
-            <button id="create-salon">Créer un salon</button>
-
+            <a href="salon.html"><button id="create-salon">Créer un salon</button></a>
             <h2>Rejoindre une partie</h2>
             <div class="form-group">
                 <label for="game-code">Entrez le code de la partie</label>
                 <input type="text" id="game-code" placeholder="Code de la partie">
             </div>
-            <button id="join-salon">Rejoindre un salon</button>
+            <a href="salon.html"><button id="join-salon">Rejoindre un salon</button></a>
         </section>
     </div>
     <script src="script.js"></script>
